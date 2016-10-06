@@ -236,6 +236,10 @@ private:
 
     Condition mMediaBuffersAvailableCondition;
 
+#ifdef CAMCORDER_GRALLOC_SOURCE
+    // Allocate and return a new MediaBuffer and pass the Gralloc buffer as metadata into it.
+    void passMetadataBuffer_g(MediaBuffer **buffer, buffer_handle_t bufferHandle) const;
+#endif
     // Allocate and return a new MediaBuffer and pass the ANW buffer as metadata into it.
     void passMetadataBuffer_l(MediaBuffer **buffer, ANativeWindowBuffer *bufferHandle) const;
 
